@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gamerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="url(#gamerGradient)"/>
+  <path d="M25 35 L50 20 L75 35 L75 65 L50 80 L25 65 Z" fill="none" stroke="white" stroke-width="4"/>
+  <circle cx="50" cy="50" r="12" fill="white"/>
+  <path d="M50 38 L50 30" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 45 L67 40" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 55 L67 60" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 62 L50 70" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 55 L33 60" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 45 L33 40" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>
