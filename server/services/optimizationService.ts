@@ -194,7 +194,7 @@ const optimizationSettings: OptimizationSetting[] = [
   },
   {
     id: 'disable-nagle',
-    name: 'Disable Nagle\'s Algorithm',
+    name: "Disable Nagle's Algorithm",
     description: 'Reduces network latency for online gaming',
     category: 'network',
     enabled: false,

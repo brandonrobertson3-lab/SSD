@@ -18,6 +18,7 @@ import {
 import type { StartupProgram, OptimizationSetting, SystemInfo } from '@shared/types';
 
 const apiBase = '/api';
+const DEFAULT_OPTIMIZATION_SCORE = 0;
 
 async function fetchJSON<T>(url: string): Promise<T> {
   const res = await fetch(`${apiBase}${url}`);
@@ -87,7 +88,7 @@ function App() {
     }
   });
 
-  const score = scoreData?.score ?? 0;
+  const score = scoreData?.score ?? DEFAULT_OPTIMIZATION_SCORE;
   const bloatwareCount = startupPrograms.filter(p => p.category === 'bloatware' && p.enabled).length;
   const highImpactCount = startupPrograms.filter(p => p.impact === 'high' && p.enabled).length;
   const recommendedNotEnabled = optimizationSettings.filter(s => s.recommended && !s.enabled).length;

@@ -17,7 +17,8 @@ router.get('/startup-programs', (_req: Request, res: Response) => {
   try {
     const programs = getStartupPrograms();
     res.json(programs);
-  } catch {
+  } catch (error) {
+    console.error('Failed to fetch startup programs:', error);
     res.status(500).json({ error: 'Failed to fetch startup programs' });
   }
 });
@@ -32,7 +33,8 @@ router.post('/startup-programs/:id/toggle', (req: Request, res: Response) => {
     } else {
       res.status(404).json({ error: 'Program not found' });
     }
-  } catch {
+  } catch (error) {
+    console.error('Failed to toggle startup program:', error);
     res.status(500).json({ error: 'Failed to toggle startup program' });
   }
 });
@@ -42,7 +44,8 @@ router.post('/startup-programs/disable-bloatware', (_req: Request, res: Response
   try {
     const disabled = disableAllBloatware();
     res.json({ success: true, disabled });
-  } catch {
+  } catch (error) {
+    console.error('Failed to disable bloatware:', error);
     res.status(500).json({ error: 'Failed to disable bloatware' });
   }
 });
@@ -52,7 +55,8 @@ router.get('/optimization-settings', (_req: Request, res: Response) => {
   try {
     const settings = getOptimizationSettings();
     res.json(settings);
-  } catch {
+  } catch (error) {
+    console.error('Failed to fetch optimization settings:', error);
     res.status(500).json({ error: 'Failed to fetch optimization settings' });
   }
 });
@@ -67,7 +71,8 @@ router.post('/optimization-settings/:id/toggle', (req: Request, res: Response) =
     } else {
       res.status(404).json(result);
     }
-  } catch {
+  } catch (error) {
+    console.error('Failed to toggle optimization setting:', error);
     res.status(500).json({ error: 'Failed to toggle optimization setting' });
   }
 });
@@ -77,7 +82,8 @@ router.post('/optimization-settings/apply-recommended', (_req: Request, res: Res
   try {
     const results = applyRecommendedSettings();
     res.json({ success: true, results });
-  } catch {
+  } catch (error) {
+    console.error('Failed to apply recommended settings:', error);
     res.status(500).json({ error: 'Failed to apply recommended settings' });
   }
 });
@@ -87,7 +93,8 @@ router.get('/system-info', (_req: Request, res: Response) => {
   try {
     const info = getSystemInfo();
     res.json(info);
-  } catch {
+  } catch (error) {
+    console.error('Failed to fetch system info:', error);
     res.status(500).json({ error: 'Failed to fetch system info' });
   }
 });
@@ -97,7 +104,8 @@ router.get('/optimization-score', (_req: Request, res: Response) => {
   try {
     const score = getOptimizationScore();
     res.json({ score });
-  } catch {
+  } catch (error) {
+    console.error('Failed to calculate optimization score:', error);
     res.status(500).json({ error: 'Failed to calculate optimization score' });
   }
 });
