@@ -1,2 +1,2 @@
-// Client entry point - exports for shared utilities
-export * from '@shared/types';
+// PlumbVoice Client Entry Point
+export * from "@shared/types";
