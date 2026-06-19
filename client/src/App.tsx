@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   LayoutDashboard, Users, FileText, Receipt, DollarSign,
-  Mail, Phone, Bot, Wrench, Menu, X,
+  Mail, Phone, Bot, Wrench, Menu, X, Globe,
 } from "lucide-react";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
@@ -11,6 +11,7 @@ import Payments from "./pages/Payments";
 import Emails from "./pages/Emails";
 import Calls from "./pages/Calls";
 import Agent from "./pages/Agent";
+import LandingPage from "./pages/LandingPage";
 
 const navItems = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -21,6 +22,7 @@ const navItems = [
   { id: "emails", label: "Email", icon: Mail },
   { id: "calls", label: "Calls", icon: Phone },
   { id: "agent", label: "AI Agent", icon: Bot },
+  { id: "website", label: "Website", icon: Globe },
 ];
 
 export default function App() {
@@ -44,6 +46,7 @@ export default function App() {
       case "emails": return <Emails onNavigate={navigate} />;
       case "calls": return <Calls onNavigate={navigate} initialData={pageData} />;
       case "agent": return <Agent onNavigate={navigate} />;
+      case "website": return <LandingPage onNavigate={navigate} />;
       default: return <Dashboard onNavigate={navigate} />;
     }
   };
